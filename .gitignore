@@ -36,13 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
 # Tilføjet for at skjule PyCharm skrald, backups og rå-billeder:
 /.idea/
 /.venv/
 /Images/
 *.heic
-*.mp4
+!public/images/*.mp4
