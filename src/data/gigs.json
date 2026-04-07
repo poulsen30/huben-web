@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "date": "2026-05-14",
+    "venue": "Smukfest (Starup)",
+    "city": "Skanderborg",
+    "ticketLink": "#"
+  },
+  {
+    "id": 2,
+    "date": "2026-06-20",
+    "venue": "Rust",
+    "city": "København",
+    "ticketLink": "#"
+  },
+  {
+    "id": 3,
+    "date": "2026-08-05",
+    "venue": "Gimle",
+    "city": "Roskilde",
+    "ticketLink": "#"
+  }
+]
