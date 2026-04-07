@@ -4,11 +4,11 @@ export default function VideoGallery() {
   const videos = [
     {
       id: "dQw4w9WgXcQ", // Placeholder YouTube IDs
-      title: "Live from Smukfest 2025",
+      title: "Live at Train, Aarhus 21/2 2026",
     },
     {
       id: "y6120QOlsfU",
-      title: "Official Music Video",
+      title: "Live at Turkis, Aarhus 20/10 2025",
     },
   ];
 
@@ -29,9 +29,9 @@ export default function VideoGallery() {
               <iframe src={`https://www.youtube.com/embed/${video.id}`} className="w-full h-full" ... />
               */}
               <div className="absolute inset-0 bg-zinc-800/50 flex flex-col items-center justify-center space-y-4">
-                 <PlayCircle className="w-16 h-16 text-huben-red/80 group-hover:text-huben-red transition-colors group-hover:scale-110" />
-                 <p className="text-white font-oswald text-xl">{video.title}</p>
-                 <p className="text-neutral-500 text-sm">YouTube Placeholder ({video.id})</p>
+                <PlayCircle className="w-16 h-16 text-huben-red/80 group-hover:text-huben-red transition-colors group-hover:scale-110" />
+                <p className="text-white font-oswald text-xl">{video.title}</p>
+                <p className="text-neutral-500 text-sm">YouTube Placeholder ({video.id})</p>
               </div>
             </div>
           ))}
