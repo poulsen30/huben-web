@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col items-center justify-center space-y-8 px-4 text-center">
         <div className="w-64 md:w-[500px] drop-shadow-[0_0_15px_rgba(215,40,40,0.5)]">
           <Image
-            src="/images/Logo2.png" // Omskift til rektangulært logo hvis muligt.
+            src="/images/Logo-final.png"
             alt="HüBEN Logo"
             width={600}
             height={200}
