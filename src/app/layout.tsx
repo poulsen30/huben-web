@@ -23,6 +23,8 @@ export const metadata: Metadata = {
   description: "Official site for the band HüBEN. Find our next gigs, watch videos and listen.",
 };
 
+import Header from "@/components/Header";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -34,6 +36,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col bg-zinc-950 text-neutral-200">
+        <Header />
         {children}
       </body>
     </html>

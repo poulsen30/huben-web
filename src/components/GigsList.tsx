@@ -8,7 +8,7 @@ export default function GigsList() {
     <section id="gigs" className="py-24 px-4 max-w-4xl mx-auto w-full">
       <div className="text-center mb-16">
         <h2 className="font-oswald text-4xl md:text-5xl uppercase text-white mb-4">
-          Tour Dates
+          Upcoming Concerts
         </h2>
         <div className="h-1 w-24 bg-huben-red mx-auto"></div>
       </div>
@@ -56,7 +56,7 @@ export default function GigsList() {
                 className="flex items-center space-x-2 border border-huben-red text-huben-red px-6 py-2 rounded uppercase tracking-wider font-semibold hover:bg-huben-red hover:text-white transition-all w-full md:w-auto justify-center"
               >
                 <Ticket className="w-5 h-5" />
-                <span>Tickets</span>
+                <span>More Info</span>
               </a>
             </div>
           </div>
