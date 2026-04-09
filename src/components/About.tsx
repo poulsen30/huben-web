@@ -39,14 +39,14 @@ export default function About() {
             <div className="relative w-48 h-auto p-4 bg-black/50 rounded-lg group-hover:bg-black transition-colors ring-1 ring-zinc-800 group-hover:ring-huben-red/50">
               <Image
                 src="/images/grobund.png"
-                alt="Grobund Bandakademi"
+                alt="Grobund Bandakademi Aarhus"
                 width={300}
                 height={150}
                 className="w-full h-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
               />
             </div>
             <p className="text-sm text-zinc-500 text-center max-w-[250px] group-hover:text-zinc-300 transition-colors">
-              Hüben is a proud part of Grobund Bandakademi in Aarhus.
+              Hüben is a part of Grobund Bandakademi in Aarhus.
             </p>
           </a>
         </div>
