@@ -53,13 +53,13 @@ export default function GigsList() {
                       href={(gig as any).mapLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-neutral-500 hover:text-huben-red transition-colors shrink-0 hidden md:block"
+                      className="text-neutral-500 hover:text-huben-red transition-colors shrink-0"
                       title="Vis på Google Maps"
                     >
                       <MapPin className="w-8 h-8" />
                     </a>
                   ) : (
-                    <MapPin className="text-neutral-500 w-8 h-8 hidden md:block shrink-0" />
+                    <MapPin className="text-neutral-500 w-8 h-8 shrink-0" />
                   )}
                   <div>
                     <h3 className="text-xl text-neutral-100 font-bold tracking-wide">
@@ -71,7 +71,7 @@ export default function GigsList() {
               </div>
 
               {/* Buttons (Poster + Ticket) */}
-              <div className="flex flex-row items-center justify-start md:justify-end space-x-4 md:space-x-8 shrink-0 w-full md:w-auto mt-2 md:mt-0">
+              <div className="flex flex-row items-center justify-between md:justify-end space-x-4 md:space-x-8 shrink-0 w-full md:w-auto mt-6 md:mt-0">
                 {/* Poster Thumbnail Button */}
                 {(gig as any).poster && (
                   <button
@@ -91,7 +91,7 @@ export default function GigsList() {
                 {/* Ticket Button */}
                 <a
                   href={gig.ticketLink}
-                  className="flex items-center justify-center space-x-2 border border-huben-red text-huben-red px-3 md:px-6 h-[48px] rounded uppercase tracking-wider font-semibold hover:bg-huben-red hover:text-white transition-all flex-grow md:flex-grow-0 whitespace-nowrap shrink-0"
+                  className="flex items-center justify-center space-x-2 border border-huben-red text-huben-red px-6 h-[48px] rounded uppercase tracking-wider font-semibold hover:bg-huben-red hover:text-white transition-all whitespace-nowrap shrink-0"
                 >
                   <Ticket className="w-5 h-5 shrink-0" />
                   <span className="text-sm md:text-base">More Info</span>
