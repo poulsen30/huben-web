@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section className="py-24 bg-zinc-950 w-full relative border-t border-zinc-900 border-b">
+    <section className="pt-8 pb-24 bg-zinc-950 w-full relative border-t border-zinc-900 border-b">
       {/* Decorative gradient blur */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-red-900/10 blur-[120px] rounded-full pointer-events-none" />
 
