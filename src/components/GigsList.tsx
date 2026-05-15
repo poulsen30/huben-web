@@ -23,10 +23,10 @@ export default function GigsList() {
           {gigsData.map((gig) => (
             <div
               key={gig.id}
-              className="flex flex-col md:flex-row md:items-center justify-between p-6 bg-zinc-900/50 border border-zinc-800 rounded-lg hover:bg-zinc-800/80 transition-colors group relative gap-6"
+              className="flex flex-col md:flex-row md:items-center justify-between p-4 md:p-6 bg-zinc-900/50 border border-zinc-800 rounded-lg hover:bg-zinc-800/80 transition-colors group relative gap-4 md:gap-6"
             >
               {/* Left Group: Date & Venue */}
-              <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12 flex-grow">
+              <div className="flex flex-row items-center gap-4 md:gap-12 flex-grow w-full md:w-auto justify-between md:justify-start">
                 {/* Date */}
                 <div className="flex items-center space-x-4 md:min-w-[140px]">
                   <Calendar className="text-huben-red w-8 h-8 shrink-0" />
@@ -71,7 +71,7 @@ export default function GigsList() {
               </div>
 
               {/* Buttons (Poster + Ticket) */}
-              <div className="flex flex-row items-center justify-start md:justify-end space-x-8 shrink-0 w-full md:w-auto mt-2 md:mt-0">
+              <div className="flex flex-row items-center justify-start md:justify-end space-x-4 md:space-x-8 shrink-0 w-full md:w-auto mt-2 md:mt-0">
                 {/* Poster Thumbnail Button */}
                 {(gig as any).poster && (
                   <button
@@ -91,10 +91,10 @@ export default function GigsList() {
                 {/* Ticket Button */}
                 <a
                   href={gig.ticketLink}
-                  className="flex items-center justify-center space-x-2 border border-huben-red text-huben-red px-6 h-[48px] rounded uppercase tracking-wider font-semibold hover:bg-huben-red hover:text-white transition-all w-full sm:w-auto whitespace-nowrap shrink-0"
+                  className="flex items-center justify-center space-x-2 border border-huben-red text-huben-red px-3 md:px-6 h-[48px] rounded uppercase tracking-wider font-semibold hover:bg-huben-red hover:text-white transition-all flex-grow md:flex-grow-0 whitespace-nowrap shrink-0"
                 >
                   <Ticket className="w-5 h-5 shrink-0" />
-                  <span>More Info</span>
+                  <span className="text-sm md:text-base">More Info</span>
                 </a>
               </div>
             </div>
