@@ -3,7 +3,7 @@ import GigsList from "@/components/GigsList";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center justify-start pt-32 pb-4 overflow-hidden">
+    <section className="relative min-h-screen w-full flex flex-col items-center justify-center pt-24 pb-12 overflow-hidden">
       {/* Background Video/Image Placeholder */}
       <div className="absolute inset-0 z-0">
         <video
@@ -22,8 +22,8 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center space-y-6 px-4 text-center mb-24">
-        <div className="w-56 md:w-[320px] drop-shadow-[0_0_15px_rgba(215,40,40,0.5)]">
+      <div className="relative z-10 flex flex-col items-center justify-center space-y-6 px-4 text-center my-auto">
+        <div className="w-56 md:w-[360px] drop-shadow-[0_0_15px_rgba(215,40,40,0.5)]">
           <Image
             src="/images/Logo-final.png"
             alt="HüBEN Logo"
@@ -33,12 +33,9 @@ export default function Hero() {
             className="w-full h-auto"
           />
         </div>
-
-        <p className="font-oswald text-xl md:text-3xl tracking-widest text-neutral-300 uppercase">
-        </p>
       </div>
 
-      {/* GigsList rykket op her */}
+      {/* GigsList (vises automatisk, hvis der er koncerter i gigs.json) */}
       <GigsList />
     </section>
   );

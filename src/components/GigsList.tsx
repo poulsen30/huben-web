@@ -1,13 +1,29 @@
 "use client";
 
 import { useState } from "react";
-import gigsData from "@/data/gigs.json";
-import { Calendar, MapPin, Ticket, X, ImageIcon } from "lucide-react";
+import rawGigsData from "@/data/gigs.json";
+import { Calendar, MapPin, Ticket, X } from "lucide-react";
 import Image from "next/image";
+
+export interface Gig {
+  id: number | string;
+  date: string;
+  venue: string;
+  city: string;
+  ticketLink?: string;
+  poster?: string;
+  mapLink?: string;
+}
+
+const gigsData = rawGigsData as Gig[];
 
 export default function GigsList() {
   const locale = "en-US";
   const [selectedPoster, setSelectedPoster] = useState<string | null>(null);
+
+  if (!gigsData || gigsData.length === 0) {
+    return null;
+  }
 
   return (
     <>
@@ -48,9 +64,9 @@ export default function GigsList() {
 
                 {/* Venue & City */}
                 <div className="flex items-center space-x-4">
-                  {(gig as any).mapLink ? (
+                  {gig.mapLink ? (
                     <a
-                      href={(gig as any).mapLink}
+                      href={gig.mapLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-neutral-500 hover:text-huben-red transition-colors shrink-0"
@@ -73,29 +89,31 @@ export default function GigsList() {
               {/* Buttons (Poster + Ticket) */}
               <div className="flex flex-row items-center justify-between md:justify-end space-x-4 md:space-x-8 shrink-0 w-full md:w-auto mt-6 md:mt-0">
                 {/* Poster Thumbnail Button */}
-                {(gig as any).poster && (
+                {gig.poster && (
                   <button
-                    onClick={() => setSelectedPoster((gig as any).poster)}
+                    onClick={() => setSelectedPoster(gig.poster!)}
                     className="relative w-24 h-[48px] border border-zinc-600 rounded overflow-hidden hover:border-huben-red transition-all cursor-pointer group shrink-0"
                     aria-label="View Concert Poster"
                   >
-                    <Image 
-                      src={(gig as any).poster} 
-                      alt="Concert Poster Thumbnail" 
-                      fill 
-                      className="object-cover group-hover:scale-110 transition-transform" 
+                    <Image
+                      src={gig.poster}
+                      alt="Concert Poster Thumbnail"
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform"
                     />
                   </button>
                 )}
 
                 {/* Ticket Button */}
-                <a
-                  href={gig.ticketLink}
-                  className="flex items-center justify-center space-x-2 border border-huben-red text-huben-red px-6 h-[48px] rounded uppercase tracking-wider font-semibold hover:bg-huben-red hover:text-white transition-all whitespace-nowrap shrink-0"
-                >
-                  <Ticket className="w-5 h-5 shrink-0" />
-                  <span className="text-sm md:text-base">More Info</span>
-                </a>
+                {gig.ticketLink && (
+                  <a
+                    href={gig.ticketLink}
+                    className="flex items-center justify-center space-x-2 border border-huben-red text-huben-red px-6 h-[48px] rounded uppercase tracking-wider font-semibold hover:bg-huben-red hover:text-white transition-all whitespace-nowrap shrink-0"
+                  >
+                    <Ticket className="w-5 h-5 shrink-0" />
+                    <span className="text-sm md:text-base">More Info</span>
+                  </a>
+                )}
               </div>
             </div>
           ))}
@@ -104,15 +122,15 @@ export default function GigsList() {
 
       {/* Poster Modal */}
       {selectedPoster && (
-        <div 
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm transition-opacity"
           onClick={() => setSelectedPoster(null)}
         >
-          <div 
+          <div
             className="relative w-full max-w-2xl h-[85vh] rounded-lg overflow-hidden border-2 border-zinc-800 shadow-2xl"
             onClick={(e) => e.stopPropagation()} // Prevent clicking image from closing modal
           >
-            <button 
+            <button
               onClick={() => setSelectedPoster(null)}
               className="absolute top-4 left-4 text-white hover:text-huben-red transition-colors bg-black/70 p-2 rounded-full z-[60]"
               aria-label="Close modal"
