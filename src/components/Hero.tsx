@@ -35,7 +35,6 @@ export default function Hero() {
         </div>
 
         <p className="font-oswald text-xl md:text-3xl tracking-widest text-neutral-300 uppercase">
-          Shoegazing in the City of Smiles
         </p>
       </div>
 
